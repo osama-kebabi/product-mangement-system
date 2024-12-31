@@ -15,26 +15,27 @@
         <div class="inputs">
             <input type="text" id="title" placeholder="Title">
             <div class="price">
-                <input type="number" id="price" placeholder="price">
-                <input type="number" id="taxes" placeholder="taxes">
-                <input type="number" id="ads" placeholder="ads">
-                <input type="number" id="discount" placeholder="discount">
-                <small id="total">434120</small>
+                <input onkeyup="getTotal()" type="number" id="price" placeholder="price">
+                <input onkeyup="getTotal()" type="number" id="taxes" placeholder="taxes">
+                <input onkeyup="getTotal()" type="number" id="ads" placeholder="ads">
+                <input onkeyup="getTotal()" type="number" id="discount" placeholder="discount">
+                <small onkeyup="getTotal()" id="total"></small>
             </div>
             <input type="number" id="count" placeholder="count">
             <input type="text" id="category" placeholder="category">
-            <button id="supmit"> create</button>
+            <button id="submit" onclick="showdata()"> create</button>
         </div>
         <div class="outputs">
             <div class="searchBlock">
-                <input type="text" id="search" placeholder="Search">
+                <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="Search">
                 <div class="btnsearch">
-                    <button id="searchTitle">Search By Title</button>
-                    <button id="searchTitle">Search By Category</button>
+                    <button onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+                    <button onclick="getSearchMood(this.id)" id="searchCategory">Search By Category</button>
                 </div>
             </div>
         </div>
         <div>
+            <div id="deleteAll"></div>
             <table>
                 <tr>
                     <th>id</th>
@@ -48,8 +49,8 @@
                     <th>update</th>
                     <th>delete</th>
                 </tr>
-                <tbody>
-                    <tr>
+                <tbody id="tbody">
+                    <!-- <tr>
                         <td>1</td>
                         <td>samsung</td>
                         <td>2000</td>
@@ -108,10 +109,11 @@
                         <td>tv</td>
                         <td><button id="update">update</button></td>
                         <td><button id="delete">delete</button></td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
